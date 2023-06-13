@@ -26,13 +26,16 @@ import NoResults from '../../assets/no-results.png'
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [profilePosts, setProfilePosts] = useState({ results: [] });
+
   const currentUser = useCurrentUser();
   const { id } = useParams();
+
   const setProfileData = useSetProfileData();
   const { pageProfile } = useProfileData();
+
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
-  const [profilePosts, setProfilePosts] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -101,7 +104,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        <Col className="p-3">Profile content</Col>
+        {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
     </>
   );
