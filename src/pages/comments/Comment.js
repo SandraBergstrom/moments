@@ -1,4 +1,4 @@
-import React,  {useState} from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Comment.module.css";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
@@ -7,8 +7,6 @@ import { useCurrentUser } from "../../context/CurrentUserContext";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { axiosRes } from "../../api/axiosDefaults";
 import CommentEditForm from "./CommentEditForm";
-
-
 
 const Comment = (props) => {
   const {
