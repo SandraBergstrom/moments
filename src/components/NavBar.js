@@ -1,12 +1,9 @@
 import React from "react";
-import { Navbar } from "react-bootstrap/Navbar";
-import { Container } from "react-bootstrap/Container";
-import { Nav } from "react-bootstrap/Nav";
+import { Navbar, Container, Nav } from "react-bootstrap/";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../context/CurrentUserContext/useCurrentUser";
-import { useSetCurrentUser } from "../context/CurrentUserContext/useSetCurrentUser";
+import { useCurrentUser, useSetCurrentUser } from "../context/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
